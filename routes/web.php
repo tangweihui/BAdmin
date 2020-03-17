@@ -58,6 +58,16 @@ Route::group([
         $route->get('config/update/{id}', 'Admin\ConfigController@configUpdateView');
         $route->post('config/update/{id}', 'Admin\ConfigController@configUpdate');
         $route->post('config/del/{id}', 'Admin\ConfigController@configDel');
+
+        $route->get('test', 'Admin\TestController@index');
+
+        // 分类管理
+        $route->get('category/list', 'Admin\CategoryController@list');
+        $route->get('category/add', 'Admin\CategoryController@addView');
+        $route->post('category/add', 'Admin\CategoryController@add');
+        $route->get('category/update/{id}', 'Admin\CategoryController@updateView');
+        $route->post('category/update/{id}', 'Admin\CategoryController@update');
+        $route->post('category/del/{id}', 'Admin\CategoryController@del');
     });
 
 });
